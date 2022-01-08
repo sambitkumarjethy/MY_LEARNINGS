@@ -3,12 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import EffectTutorial from "./EffectTutorial";
+import RefHook from "./RefHook";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <EffectTutorial />
+    <RefHook />
   </React.StrictMode>,
   document.getElementById("root")
 );

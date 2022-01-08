@@ -18,6 +18,7 @@ const ReducerTutorial = () => {
 
   return (
     <>
+      <h1>USE OF REDUCER</h1>
       <div>
         <h1>
           {state.counter}

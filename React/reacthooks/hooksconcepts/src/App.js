@@ -1,26 +1,39 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { counter: state.counter + 1, inputvalue: state.inputvalue };
+    case "inputText":
+      return { counter: state.counter, inputvalue: !state.inputvalue };
+    default:
+      return state;
+  }
+};
 
-const StateTutorial = () => {
-  const [counter, setCounter] = useState(0);
-  const [inputvalue, setInputvalue] = useState("");
+const ReducerTutorial = () => {
+  const [state, dispatch] = useReducer(reducer, {
+    counter: 0,
+    inputvalue: "xx",
+  });
 
-  const increment = (e) => {
-    setCounter(counter + 1);
-  };
-  const changevalue = (event) => {
-    setInputvalue(event.target.value);
-  };
   return (
     <>
       <div>
         <h1>
-          {counter}
-          <button onClick={increment}>increment the value</button>
-          <input placeholder="entersomething" onKeyUp={changevalue} />
-          {inputvalue}
+          {state.counter}
+          <button
+            onClick={() => {
+              dispatch({ type: "INCREMENT" });
+              dispatch({ type: "inputText" });
+            }}
+          >
+            increment the value
+          </button>
+          {/* <input placeholder="entersomething" onKeyUp={changevalue} /> */}
         </h1>
+        {state.inputvalue && <p>This is the text</p>}
       </div>
     </>
   );
 };
-export default StateTutorial;
+export default ReducerTutorial;

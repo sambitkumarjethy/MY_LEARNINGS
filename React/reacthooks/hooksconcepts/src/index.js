@@ -5,12 +5,14 @@ import App from "./App";
 import EffectTutorial from "./EffectTutorial";
 import RefHook from "./RefHook";
 import reportWebVitals from "./reportWebVitals";
+import UseLayoutEffect from "./useLayouteffect";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <EffectTutorial />
     <RefHook />
+    <UseLayoutEffect />
   </React.StrictMode>,
   document.getElementById("root")
 );

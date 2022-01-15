@@ -1,0 +1,28 @@
+swagger: "2.0"
+info:
+  title: This is my Swagger
+  description: This is my Company documentation made by me
+  version: 1.0
+  contact:
+    email: sambitkumarjethy@gmail.com
+  licience:
+    name: Apache 2.0
+  servers : "http://localhost:5000/"
+  description : "local server"
+schemes: [https,http]
+paths:
+  /string:
+    get:
+      summary: Returns a string.
+      description: String Chechup
+      responses:
+        200:    # status code
+          description: Successul Response
+          schema: 
+            type: string
+            example: "Users String"
+        400:
+          description: User Error
+          schema: 
+            type: string
+            example: "Some Error "

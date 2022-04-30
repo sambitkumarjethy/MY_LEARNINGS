@@ -10,7 +10,7 @@ export default function Tivia(
     // console.log("rest", data.data, questionNumber);
     setQuestion(data.data[1 - 1]);
   }, [data, questionNumber]);
-  // console.log("rest", question);
+  console.log("rest", questionNumber);
 
   const handleClick = () => {};
   return (

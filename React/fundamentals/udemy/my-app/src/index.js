@@ -1,23 +1,18 @@
 // IMPORT THE REACT AND REACTDOM  libraries
 import React from "react";
 import ReactDOM from "react-dom";
+import faker from "faker";
 
 //CREATE A REACT COMPONENT
-function getBtnTxt() {
-  return "Click on me";
-}
+// function getBtnTxt() {
+//   return "Click on me";
+// }
 const App = () => {
-  // const buttonText = "Click Me";
+  console.log(faker.image.avatar());
   return (
-    <div>
-      <label className="label" htmlFor="name">
-        Enter Name{" "}
-      </label>
-      <input tyepe="text" />
-      <button style={{ backgroundColor: "green", color: "white" }}>
-        {getBtnTxt()}
-      </button>
-    </div>
+    <>
+      <div className="ui container comments"></div>
+    </>
   );
 };
 

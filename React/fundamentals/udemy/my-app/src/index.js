@@ -4,6 +4,9 @@ import ReactDOM from "react-dom";
 import faker from "faker";
 
 //CREATE A REACT COMPONENT
+// function getBtnTxt() {
+//   return "Click on me";
+// }
 const App = () => {
   console.log(faker.image.avatar());
   return (

@@ -1,18 +1,20 @@
 import React from "react";
-const commentDeatil = () => {
+
+const commentDeatil = (props) => {
+  console.log({ props });
   return (
     <div className="comment">
       <a href="/" className="avtar">
-        <img alt="avtar" src={faker.image.avatar()} />
+        <img alt="avtar" src={props?.image} />
       </a>
       <div className="content">
         <a href="/" className="auther">
-          Sam
+          {props?.auther}
         </a>
         <div className="metadata">
-          <span className="date">Today at 6:00 AM</span>
+          <span className="date">{props?.time}</span>
         </div>
-        <div className="text">Nice Blog Post</div>
+        <div className="text">{props?.post}</div>
       </div>
     </div>
   );

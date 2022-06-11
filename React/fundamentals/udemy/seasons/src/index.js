@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM, { render } from "react-dom";
 import SeasonDisplay from "./seasonDIsplay";
 import Spinner from "./spinner";
+import "./style/App.css";
 class App extends React.Component {
   state = { lat: null, errorMessage: null };
   componentDidMount() {

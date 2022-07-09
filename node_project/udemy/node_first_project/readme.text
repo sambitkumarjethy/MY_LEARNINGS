@@ -1,0 +1,7 @@
+core modules
+________________________
+1.http --> lunch a server,send request
+2.https --> lunch a ssl server
+3.fs
+4.path
+5.os

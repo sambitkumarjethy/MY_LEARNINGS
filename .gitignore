@@ -6,3 +6,13 @@
 /clonedProjects
 /React/kbc
 .gitignore
+
+mern_todo/client/yarn.lock
+mern_todo/client/package-lock.json
+mern_todo/client/public/logo192.png
+*.png
+*.txt
+mern_todo/client/README.md
+*.svg
+mern_todo/client/src/reportWebVitals.js
+mern_todo/client/src/setupTests.js

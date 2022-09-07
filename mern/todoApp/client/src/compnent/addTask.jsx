@@ -1,25 +1,63 @@
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
+// import Form from "react-bootstrap/Form";
+// import Button from "react-bootstrap/Button";
 
 function AddTask() {
+  const [inputField, setInputField] = useState({
+    task: "",
+    priority: "",
+    task_description: "",
+  });
+  const inputsHandler = (e) => {
+    setInputField({ [e.target.name]: e.target.value });
+  };
+  const submitButton = () => {
+    alert(inputField.task);
+  };
   return (
     <>
-      <Form.Group className="mb-6">
-        <Form.Label>Task Name</Form.Label>
-        <Form.Control placeholder="Task Name" />
-      </Form.Group>
-      <Form.Group className="mb-6 mt-10">
-        <Form.Label>Priority</Form.Label>
-        <Form.Select>
-          <option>P0</option>
-          <option>P1</option>
-          <option>P2</option>
-        </Form.Select>
-      </Form.Group>
-      <Form.Group className="mb-6">
-        <Form.Check type="checkbox" label="Completed" />
-      </Form.Group>
-      <Button variant="success">Save</Button>
+      <div>
+        <br />
+        <br />
+        <input
+          type="text"
+          name="task"
+          onChange={inputsHandler}
+          placeholder="Task"
+          value={inputField.task}
+        />
+
+        <br />
+        <br />
+
+        <select
+          name="priority"
+          onChange={inputsHandler}
+          placeholder="priority"
+          value={inputField.priority}
+        >
+          <option value="P3">P3</option>
+          <option value="P2">P2</option>
+          <option value="P1">P1</option>
+          <option value="P0">P0</option>
+        </select>
+
+        <br />
+        <br />
+
+        <textarea
+          name="task_description"
+          onChange={inputsHandler}
+          placeholder="Task Description"
+          value={inputField.task_description}
+          rows="4"
+          cols="50"
+        ></textarea>
+
+        <br />
+
+        <button onClick={submitButton}>Submit Now</button>
+      </div>
     </>
   );
 }

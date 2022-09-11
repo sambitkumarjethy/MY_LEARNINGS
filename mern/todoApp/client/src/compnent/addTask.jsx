@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
+import Axios from "axios";
 
 function AddTask() {
   const [inputField, setInputField] = useState({
@@ -9,10 +10,23 @@ function AddTask() {
     task_description: "",
   });
   const inputsHandler = (e) => {
-    setInputField({ [e.target.name]: e.target.value });
+    setInputField({ ...inputField, [e.target.name]: e.target.value });
   };
   const submitButton = () => {
-    alert(inputField.task);
+    console.log(inputField);
+    const todoData = {
+      task: inputField.task,
+      priority: inputField.priority,
+      task_description: inputField.task_description,
+    };
+    const url = "http://localhost:8080/create";
+    Axios.post(url, todoData)
+      .then((res) => {
+        //handle your login
+      })
+      .catch((e) => {
+        //handle your errors
+      });
   };
   return (
     <>
